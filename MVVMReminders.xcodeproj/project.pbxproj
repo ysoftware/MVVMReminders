@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7119BE6620F0822A00B758E2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119BE6520F0822A00B758E2 /* Extensions.swift */; };
+		7119BE6A20F0847600B758E2 /* JSONAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119BE6920F0847500B758E2 /* JSONAny.swift */; };
+		7119BE6E20F0957C00B758E2 /* ReminderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119BE6D20F0957C00B758E2 /* ReminderVM.swift */; };
+		7119BE7020F0959200B758E2 /* TaskVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119BE6F20F0959200B758E2 /* TaskVM.swift */; };
+		7119BE7220F095B800B758E2 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119BE7120F095B800B758E2 /* Query.swift */; };
+		71493E8F20EFBAC500E579C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493E8E20EFBAC500E579C1 /* AppDelegate.swift */; };
+		71493E9120EFBAC500E579C1 /* RemindersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493E9020EFBAC500E579C1 /* RemindersVC.swift */; };
+		71493E9420EFBAC500E579C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71493E9220EFBAC500E579C1 /* Main.storyboard */; };
+		71493E9620EFBAC900E579C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71493E9520EFBAC900E579C1 /* Assets.xcassets */; };
+		71493E9920EFBAC900E579C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71493E9720EFBAC900E579C1 /* LaunchScreen.storyboard */; };
+		71493EA120EFBCE700E579C1 /* TaskAVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493EA020EFBCE700E579C1 /* TaskAVM.swift */; };
+		71493EA320EFCF2500E579C1 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493EA220EFCF2500E579C1 /* Cells.swift */; };
+		71493EA620EFD03A00E579C1 /* ReminderAVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493EA520EFD03A00E579C1 /* ReminderAVM.swift */; };
+		71493EAA20EFD0A400E579C1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493EA920EFD0A400E579C1 /* Task.swift */; };
+		71493EB020EFD0D100E579C1 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493EAF20EFD0D100E579C1 /* Database.swift */; };
+		71493EB220EFD11500E579C1 /* TasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493EB120EFD11500E579C1 /* TasksVC.swift */; };
+		71493EB420EFF53500E579C1 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493EB320EFF53500E579C1 /* Reminder.swift */; };
+		F6AC65A73E78204004C9FE5A /* Pods_MVVMReminders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197362E7F92E1F6F4DCE162F /* Pods_MVVMReminders.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		197362E7F92E1F6F4DCE162F /* Pods_MVVMReminders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMReminders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5219AD68EC4F75FB9E947671 /* Pods-MVVMReminders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMReminders.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMReminders/Pods-MVVMReminders.release.xcconfig"; sourceTree = "<group>"; };
+		7119BE6520F0822A00B758E2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7119BE6920F0847500B758E2 /* JSONAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAny.swift; sourceTree = "<group>"; };
+		7119BE6D20F0957C00B758E2 /* ReminderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVM.swift; sourceTree = "<group>"; };
+		7119BE6F20F0959200B758E2 /* TaskVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVM.swift; sourceTree = "<group>"; };
+		7119BE7120F095B800B758E2 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		71493E8B20EFBAC500E579C1 /* MVVMReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71493E8E20EFBAC500E579C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		71493E9020EFBAC500E579C1 /* RemindersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersVC.swift; sourceTree = "<group>"; };
+		71493E9320EFBAC500E579C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		71493E9520EFBAC900E579C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		71493E9820EFBAC900E579C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		71493E9A20EFBAC900E579C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71493EA020EFBCE700E579C1 /* TaskAVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAVM.swift; sourceTree = "<group>"; };
+		71493EA220EFCF2500E579C1 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		71493EA520EFD03A00E579C1 /* ReminderAVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderAVM.swift; sourceTree = "<group>"; };
+		71493EA920EFD0A400E579C1 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		71493EAF20EFD0D100E579C1 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Database.swift; path = MVVMReminders/Database.swift; sourceTree = SOURCE_ROOT; };
+		71493EB120EFD11500E579C1 /* TasksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksVC.swift; sourceTree = "<group>"; };
+		71493EB320EFF53500E579C1 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		F14EA8CF1DC92DED077A504A /* Pods-MVVMReminders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMReminders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMReminders/Pods-MVVMReminders.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71493E8820EFBAC500E579C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6AC65A73E78204004C9FE5A /* Pods_MVVMReminders.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7119BE6B20F0956A00B758E2 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				7119BE6F20F0959200B758E2 /* TaskVM.swift */,
+				71493EA020EFBCE700E579C1 /* TaskAVM.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		7119BE6C20F0956F00B758E2 /* Reminders */ = {
+			isa = PBXGroup;
+			children = (
+				7119BE7120F095B800B758E2 /* Query.swift */,
+				7119BE6D20F0957C00B758E2 /* ReminderVM.swift */,
+				71493EA520EFD03A00E579C1 /* ReminderAVM.swift */,
+			);
+			path = Reminders;
+			sourceTree = "<group>";
+		};
+		71493E8220EFBAC500E579C1 = {
+			isa = PBXGroup;
+			children = (
+				71493E8D20EFBAC500E579C1 /* MVVMReminders */,
+				71493E8C20EFBAC500E579C1 /* Products */,
+				7567F7608FB3DDC52D5FC487 /* Pods */,
+				C1832F5704B7EECC59403809 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		71493E8C20EFBAC500E579C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71493E8B20EFBAC500E579C1 /* MVVMReminders.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		71493E8D20EFBAC500E579C1 /* MVVMReminders */ = {
+			isa = PBXGroup;
+			children = (
+				71493EAD20EFD0C400E579C1 /* Services */,
+				71493EA820EFD09A00E579C1 /* Model */,
+				71493EA420EFD02900E579C1 /* ViewModel */,
+				71493EA720EFD07500E579C1 /* View */,
+				71961FF020F1141500CB240C /* Support Files */,
+			);
+			path = MVVMReminders;
+			sourceTree = "<group>";
+		};
+		71493EA420EFD02900E579C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7119BE6C20F0956F00B758E2 /* Reminders */,
+				7119BE6B20F0956A00B758E2 /* Tasks */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		71493EA720EFD07500E579C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71493E9020EFBAC500E579C1 /* RemindersVC.swift */,
+				71493EB120EFD11500E579C1 /* TasksVC.swift */,
+				71493EA220EFCF2500E579C1 /* Cells.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71493EA820EFD09A00E579C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71493EA920EFD0A400E579C1 /* Task.swift */,
+				71493EB320EFF53500E579C1 /* Reminder.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		71493EAD20EFD0C400E579C1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				71493EAE20EFD0C800E579C1 /* Data */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		71493EAE20EFD0C800E579C1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				71493EAF20EFD0D100E579C1 /* Database.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		71961FF020F1141500CB240C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				71493E8E20EFBAC500E579C1 /* AppDelegate.swift */,
+				7119BE6920F0847500B758E2 /* JSONAny.swift */,
+				7119BE6520F0822A00B758E2 /* Extensions.swift */,
+				71493E9220EFBAC500E579C1 /* Main.storyboard */,
+				71493E9520EFBAC900E579C1 /* Assets.xcassets */,
+				71493E9720EFBAC900E579C1 /* LaunchScreen.storyboard */,
+				71493E9A20EFBAC900E579C1 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		7567F7608FB3DDC52D5FC487 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F14EA8CF1DC92DED077A504A /* Pods-MVVMReminders.debug.xcconfig */,
+				5219AD68EC4F75FB9E947671 /* Pods-MVVMReminders.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C1832F5704B7EECC59403809 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				197362E7F92E1F6F4DCE162F /* Pods_MVVMReminders.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		71493E8A20EFBAC500E579C1 /* MVVMReminders */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71493E9D20EFBAC900E579C1 /* Build configuration list for PBXNativeTarget "MVVMReminders" */;
+			buildPhases = (
+				9A5940CD82E65759337BC71E /* [CP] Check Pods Manifest.lock */,
+				71493E8720EFBAC500E579C1 /* Sources */,
+				71493E8820EFBAC500E579C1 /* Frameworks */,
+				71493E8920EFBAC500E579C1 /* Resources */,
+				EE3ADEE564A27509728DE04D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MVVMReminders;
+			productName = MVVMReminders;
+			productReference = 71493E8B20EFBAC500E579C1 /* MVVMReminders.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		71493E8320EFBAC500E579C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Ysoftware;
+				TargetAttributes = {
+					71493E8A20EFBAC500E579C1 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 71493E8620EFBAC500E579C1 /* Build configuration list for PBXProject "MVVMReminders" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 71493E8220EFBAC500E579C1;
+			productRefGroup = 71493E8C20EFBAC500E579C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				71493E8A20EFBAC500E579C1 /* MVVMReminders */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		71493E8920EFBAC500E579C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71493E9920EFBAC900E579C1 /* LaunchScreen.storyboard in Resources */,
+				71493E9620EFBAC900E579C1 /* Assets.xcassets in Resources */,
+				71493E9420EFBAC500E579C1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9A5940CD82E65759337BC71E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MVVMReminders-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE3ADEE564A27509728DE04D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MVVMReminders/Pods-MVVMReminders-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MVVM/MVVM.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MVVM.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVVMReminders/Pods-MVVMReminders-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		71493E8720EFBAC500E579C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71493EA620EFD03A00E579C1 /* ReminderAVM.swift in Sources */,
+				71493E9120EFBAC500E579C1 /* RemindersVC.swift in Sources */,
+				7119BE7220F095B800B758E2 /* Query.swift in Sources */,
+				71493EA120EFBCE700E579C1 /* TaskAVM.swift in Sources */,
+				7119BE6A20F0847600B758E2 /* JSONAny.swift in Sources */,
+				71493EAA20EFD0A400E579C1 /* Task.swift in Sources */,
+				71493E8F20EFBAC500E579C1 /* AppDelegate.swift in Sources */,
+				7119BE6620F0822A00B758E2 /* Extensions.swift in Sources */,
+				71493EA320EFCF2500E579C1 /* Cells.swift in Sources */,
+				7119BE7020F0959200B758E2 /* TaskVM.swift in Sources */,
+				71493EB420EFF53500E579C1 /* Reminder.swift in Sources */,
+				7119BE6E20F0957C00B758E2 /* ReminderVM.swift in Sources */,
+				71493EB020EFD0D100E579C1 /* Database.swift in Sources */,
+				71493EB220EFD11500E579C1 /* TasksVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		71493E9220EFBAC500E579C1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71493E9320EFBAC500E579C1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		71493E9720EFBAC900E579C1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71493E9820EFBAC900E579C1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		71493E9B20EFBAC900E579C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		71493E9C20EFBAC900E579C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		71493E9E20EFBAC900E579C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14EA8CF1DC92DED077A504A /* Pods-MVVMReminders.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S422Q897FZ;
+				INFOPLIST_FILE = "MVVMReminders/Support Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ysoftware.MVVMReminders;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		71493E9F20EFBAC900E579C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5219AD68EC4F75FB9E947671 /* Pods-MVVMReminders.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S422Q897FZ;
+				INFOPLIST_FILE = "MVVMReminders/Support Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ysoftware.MVVMReminders;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		71493E8620EFBAC500E579C1 /* Build configuration list for PBXProject "MVVMReminders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71493E9B20EFBAC900E579C1 /* Debug */,
+				71493E9C20EFBAC900E579C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71493E9D20EFBAC900E579C1 /* Build configuration list for PBXNativeTarget "MVVMReminders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71493E9E20EFBAC900E579C1 /* Debug */,
+				71493E9F20EFBAC900E579C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 71493E8320EFBAC500E579C1 /* Project object */;
+}

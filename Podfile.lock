@@ -1,0 +1,16 @@
+PODS:
+  - MVVM (0.0.1)
+
+DEPENDENCIES:
+  - MVVM (from `/Users/ysoftware/Documents/Work/Shared/MVVM`)
+
+EXTERNAL SOURCES:
+  MVVM:
+    :path: "/Users/ysoftware/Documents/Work/Shared/MVVM"
+
+SPEC CHECKSUMS:
+  MVVM: fe00538ee0b1bdae5d3b5f5c742ab88d610a8b08
+
+PODFILE CHECKSUM: 718f3057277b048ee2f9922f41c5af7c4452d6ac
+
+COCOAPODS: 1.5.2
