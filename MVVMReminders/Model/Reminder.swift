@@ -28,7 +28,7 @@ extension Reminder: Equatable {
 	}
 }
 
-extension Reminder:CustomDebugStringConvertible {
+extension Reminder: CustomDebugStringConvertible {
 
 	var debugDescription: String {
 		return "Reminder \(name) with \(tasksCount) task(s) (\(id))"

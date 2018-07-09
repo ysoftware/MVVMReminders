@@ -24,11 +24,12 @@
 		71493EB020EFD0D100E579C1 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493EAF20EFD0D100E579C1 /* Database.swift */; };
 		71493EB220EFD11500E579C1 /* TasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493EB120EFD11500E579C1 /* TasksVC.swift */; };
 		71493EB420EFF53500E579C1 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493EB320EFF53500E579C1 /* Reminder.swift */; };
-		F6AC65A73E78204004C9FE5A /* Pods_MVVMReminders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197362E7F92E1F6F4DCE162F /* Pods_MVVMReminders.framework */; };
+		714ABF4C20F3489C0023831F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 714ABF4B20F3489B0023831F /* GoogleService-Info.plist */; };
+		999A577D1D1DB7888DAB2B90 /* libPods-MVVMReminders.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 228FDC1AAAD26D85BD9EB951 /* libPods-MVVMReminders.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		197362E7F92E1F6F4DCE162F /* Pods_MVVMReminders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMReminders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		228FDC1AAAD26D85BD9EB951 /* libPods-MVVMReminders.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MVVMReminders.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5219AD68EC4F75FB9E947671 /* Pods-MVVMReminders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMReminders.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMReminders/Pods-MVVMReminders.release.xcconfig"; sourceTree = "<group>"; };
 		7119BE6520F0822A00B758E2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7119BE6920F0847500B758E2 /* JSONAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAny.swift; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		71493EAF20EFD0D100E579C1 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Database.swift; path = MVVMReminders/Database.swift; sourceTree = SOURCE_ROOT; };
 		71493EB120EFD11500E579C1 /* TasksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksVC.swift; sourceTree = "<group>"; };
 		71493EB320EFF53500E579C1 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		714ABF4B20F3489B0023831F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F14EA8CF1DC92DED077A504A /* Pods-MVVMReminders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMReminders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMReminders/Pods-MVVMReminders.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6AC65A73E78204004C9FE5A /* Pods_MVVMReminders.framework in Frameworks */,
+				999A577D1D1DB7888DAB2B90 /* libPods-MVVMReminders.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +162,7 @@
 		71961FF020F1141500CB240C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				714ABF4B20F3489B0023831F /* GoogleService-Info.plist */,
 				71493E8E20EFBAC500E579C1 /* AppDelegate.swift */,
 				7119BE6920F0847500B758E2 /* JSONAny.swift */,
 				7119BE6520F0822A00B758E2 /* Extensions.swift */,
@@ -183,7 +186,7 @@
 		C1832F5704B7EECC59403809 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				197362E7F92E1F6F4DCE162F /* Pods_MVVMReminders.framework */,
+				228FDC1AAAD26D85BD9EB951 /* libPods-MVVMReminders.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,7 +202,7 @@
 				71493E8720EFBAC500E579C1 /* Sources */,
 				71493E8820EFBAC500E579C1 /* Frameworks */,
 				71493E8920EFBAC500E579C1 /* Resources */,
-				EE3ADEE564A27509728DE04D /* [CP] Embed Pods Frameworks */,
+				14817904C13A8CC515E81868 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,12 +254,31 @@
 				71493E9920EFBAC900E579C1 /* LaunchScreen.storyboard in Resources */,
 				71493E9620EFBAC900E579C1 /* Assets.xcassets in Resources */,
 				71493E9420EFBAC500E579C1 /* Main.storyboard in Resources */,
+				714ABF4C20F3489C0023831F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		14817904C13A8CC515E81868 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MVVMReminders/Pods-MVVMReminders-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC/gRPCCertificates.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVVMReminders/Pods-MVVMReminders-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9A5940CD82E65759337BC71E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -273,24 +295,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EE3ADEE564A27509728DE04D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MVVMReminders/Pods-MVVMReminders-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MVVM/MVVM.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MVVM.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVVMReminders/Pods-MVVMReminders-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

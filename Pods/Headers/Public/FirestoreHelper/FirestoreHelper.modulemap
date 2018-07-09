@@ -1,0 +1,6 @@
+module FirestoreHelper {
+  umbrella header "FirestoreHelper-umbrella.h"
+
+  export *
+  module * { export * }
+}

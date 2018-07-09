@@ -1,0 +1,14 @@
+CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES
+CLANG_WARN_STRICT_PROTOTYPES = NO
+CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/gRPC-ProtoRPC
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/gRPC-ProtoRPC" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/BoringSSL" "${PODS_ROOT}/Headers/Public/gRPC" "${PODS_ROOT}/Headers/Public/gRPC-Core" "${PODS_ROOT}/Headers/Public/gRPC-ProtoRPC" "${PODS_ROOT}/Headers/Public/gRPC-RxLibrary"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL" "${PODS_CONFIGURATION_BUILD_DIR}/Protobuf" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-RxLibrary" "${PODS_CONFIGURATION_BUILD_DIR}/nanopb"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_ROOT}/Headers/Public/GRPCClient/gRPC.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/RxLibrary/gRPC-RxLibrary.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/Protobuf/Protobuf.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Private/grpc/gRPC-Core.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Private/openssl/BoringSSL.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/nanopb/nanopb.modulemap"
+OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/GRPCClient/gRPC.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/RxLibrary/gRPC-RxLibrary.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/Protobuf/Protobuf.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Private/grpc/gRPC-Core.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Private/openssl/BoringSSL.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/nanopb/nanopb.modulemap" -import-underlying-module -Xcc -fmodule-map-file="${SRCROOT}/${MODULEMAP_FILE}"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/gRPC-ProtoRPC
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES

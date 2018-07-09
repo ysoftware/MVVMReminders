@@ -1,11 +1,14 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'MVVMReminders' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+	use_modular_headers!
 
-  # Pods for MVVMReminders
-  pod 'MVVM', :path=>'/Users/ysoftware/Documents/Work/Shared/MVVM'
+	pod 'Firebase/Firestore'
+	pod 'Firebase/Auth'
+	pod 'Firebase/Core'
+
+	pod 'AuthController', :path=>'/Users/ysoftware/Documents/Work/Shared/AuthController'
+	pod 'FirestoreHelper', :path=>'/Users/ysoftware/Documents/Work/Shared/FirestoreHelper'
+	pod 'MVVM', :path=>'/Users/ysoftware/Documents/Work/Shared/MVVM'
 
 end

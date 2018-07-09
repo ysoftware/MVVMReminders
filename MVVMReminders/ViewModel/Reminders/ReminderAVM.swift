@@ -52,10 +52,11 @@ class ReminderArrayViewModel: ArrayViewModel<Reminder, ReminderViewModel, Remind
 	override func fetchData(_ query: ReminderQuery?,
 							_ block: @escaping ([Reminder]) -> Void) {
 		guard let query = query else { return block([]) }
-		let all = Database.getReminders()
-		let startIndex = all.startIndex.advanced(by: query.page * query.size)
-		let endIndex = min(startIndex.advanced(by: query.size), all.endIndex)
-		block(Array(all[startIndex..<endIndex]))
-		array.forEach { $0.reminderArrayViewModel = self }
+		let startIndex = query.page * query.size
+		let endIndex = query.size
+		Database.getReminders(offset: startIndex, size: endIndex) { reminders in
+			block(reminders)
+			self.array.forEach { $0.reminderArrayViewModel = self }
+		}
 	}
 }

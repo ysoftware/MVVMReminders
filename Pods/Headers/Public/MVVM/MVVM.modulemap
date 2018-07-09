@@ -1,0 +1,6 @@
+module MVVM {
+  umbrella header "MVVM-umbrella.h"
+
+  export *
+  module * { export * }
+}
