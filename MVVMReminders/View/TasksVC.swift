@@ -84,8 +84,10 @@ extension TasksViewController: ArrayViewModelDelegate {
 	}
 
 	func didMoveElement(at startIndex: Int, to endIndex: Int) {
-		tableView.moveRow(at: IndexPath(row: startIndex, section: 0),
-						  to: IndexPath(row: endIndex, section: 0))
+		tableView.reloadData()
+		// TO-DO: что происходит? почему раньше работало с этим, но теперь с Firebase - нет?
+//		tableView.moveRow(at: IndexPath(row: startIndex, section: 0),
+//						  to: IndexPath(row: endIndex, section: 0))
 	}
 
 	func didUpdateData() {

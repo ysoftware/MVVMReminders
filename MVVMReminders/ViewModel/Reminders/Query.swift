@@ -7,18 +7,19 @@
 //
 
 import MVVM
+import FirebaseFirestore
 
-class ReminderQuery:Query {
+class ReminderQuery:MVVM.Query {
 
-	var page = 0
+	var cursor:DocumentSnapshot?
 
 	// MARK: - Query protocol
 
 	func resetPosition() {
-		page = 0
+		cursor = nil
 	}
 
 	func advance() {
-		page += 1
+		// not used with firebase
 	}
 }

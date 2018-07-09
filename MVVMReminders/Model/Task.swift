@@ -10,7 +10,7 @@ import Foundation
 
 class Task: Codable {
 
-	var order:Int! = 0
+	var order:Int = 0
 	var id:String
 	var name:String
 	var isFinished:Bool = false
@@ -40,6 +40,6 @@ extension Task: Equatable {
 extension Task: CustomDebugStringConvertible {
 
 	var debugDescription: String {
-		return "Task (\(order!)): \"\(name)\", finished: \(isFinished))"
+		return "Task (\(order)): \"\(name)\", finished: \(isFinished))"
 	}
 }
