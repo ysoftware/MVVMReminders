@@ -10,9 +10,6 @@ import MVVM
 
 class ReminderViewModel: ViewModel<Reminder> {
 
-	/// Reminder can be used inside of an array view model
-	var reminderArrayViewModel:ReminderArrayViewModel?
-
 	// MARK: - Methods
 
 	func updateTaskCount(added:Bool) {
@@ -26,7 +23,6 @@ class ReminderViewModel: ViewModel<Reminder> {
 
 		// notify
 		notifyUpdated()
-		reminderArrayViewModel?.notifyUpdated(self)
 	}
 
 	// MARK: - Properties

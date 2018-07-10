@@ -133,7 +133,7 @@ class Database {
 	}
 
 	fileprivate static var refForReminders: CollectionReference {
-		guard let userId = authController.userId else { fatalError("user not found") }
+		guard let userId = authController.userId else { return Firestore.ref("a") }
 		return Firestore.ref(usersRef).document(userId).collection(remindersRef)
 	}
 }

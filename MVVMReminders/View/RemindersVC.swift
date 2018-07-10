@@ -6,6 +6,7 @@
 //  Copyright © 2018 Ysoftware. All rights reserved.
 //
 
+import AuthController
 import UIKit
 import MVVM
 
@@ -28,6 +29,17 @@ class RemindersViewController: UIViewController {
 		
 		viewModel.delegate = self
 		viewModel.reloadData()
+
+		NotificationCenter.default.addObserver(forName: .authControllerDidSignIn,
+											   object: nil,
+											   queue: .main) { _ in
+												self.viewModel.reloadData()
+		}
+		NotificationCenter.default.addObserver(forName: .authControllerDidShowLogin,
+											   object: nil,
+											   queue: .main) { _ in
+												self.viewModel.clearData()
+		}
 	}
 
 	@objc func quit(_ sender:Any) {

@@ -10,9 +10,6 @@ import MVVM
 
 class TaskViewModel: ViewModel<Task> {
 
-	/// Task can be used inside of an array view model
-	weak var taskArrayViewModel:TaskArrayViewModel?
-
 	// MARK: - Methods
 
 	func toggleFinished() {
@@ -26,7 +23,6 @@ class TaskViewModel: ViewModel<Task> {
 
 		// notify updated
 		notifyUpdated()
-		taskArrayViewModel?.didUpdateData(self)
 	}
 
 	// MARK: - Properties

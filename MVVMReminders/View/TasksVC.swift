@@ -29,7 +29,7 @@ class TasksViewController: UIViewController {
 									 action: #selector(toggleEditMode))
 
 		navigationItem.rightBarButtonItems = [addButton, editButton]
-		navigationItem.title = viewModel.reminderViewModel.name
+		navigationItem.title = viewModel.reminderViewModel?.name ?? "Задачи"
 
 		viewModel.delegate = self
 		viewModel.reloadData()

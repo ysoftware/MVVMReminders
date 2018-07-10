@@ -23,7 +23,6 @@ class ReminderArrayViewModel: ArrayViewModel<Reminder, ReminderViewModel, Remind
 		// create
 		let reminder = Reminder(with: name)
 		let reminderViewModel = ReminderViewModel(reminder)
-		reminderViewModel.reminderArrayViewModel = self
 
 		// save to storage
 		Database.addReminder(reminder)
@@ -54,7 +53,6 @@ class ReminderArrayViewModel: ArrayViewModel<Reminder, ReminderViewModel, Remind
 		guard let query = query else { return block([]) }
 		Database.getReminders(with: query) { reminders in
 			block(reminders)
-			self.array.forEach { $0.reminderArrayViewModel = self }
 		}
 	}
 }

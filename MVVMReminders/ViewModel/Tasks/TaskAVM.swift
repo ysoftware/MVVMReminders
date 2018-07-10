@@ -11,7 +11,7 @@ import MVVM
 class TaskArrayViewModel: SimpleArrayViewModel<Task, TaskViewModel> {
 
 	// tasks depend on reminders in this example
-	var reminderViewModel:ReminderViewModel
+	weak var reminderViewModel:ReminderViewModel?
 
 	required init(_ reminderViewModel:ReminderViewModel) {
 		self.reminderViewModel = reminderViewModel
@@ -21,11 +21,11 @@ class TaskArrayViewModel: SimpleArrayViewModel<Task, TaskViewModel> {
 
 	@discardableResult
 	func createTask(withName name:String) -> TaskViewModel? {
-		guard let model = reminderViewModel.model else { return nil }
+		guard let model = reminderViewModel?.model else { return nil }
 
 		// create
 		let task = Task(with: name, reminderId: model.id)
-		task.order = reminderViewModel.reminderArrayViewModel?.numberOfItems ?? 0
+		task.order = reminderViewModel?.model?.tasksCount ?? 0
 		let taskViewModel = TaskViewModel(task)
 		taskViewModel.delegate = self
 
@@ -33,7 +33,7 @@ class TaskArrayViewModel: SimpleArrayViewModel<Task, TaskViewModel> {
 		Database.addTask(task)
 
 		// update reminder viewModel
-		reminderViewModel.updateTaskCount(added: true)
+		reminderViewModel?.updateTaskCount(added: true)
 
 		// add to viewModel
 		append(taskViewModel)
@@ -67,16 +67,15 @@ class TaskArrayViewModel: SimpleArrayViewModel<Task, TaskViewModel> {
 		delete(at: index)
 
 		// update reminder viewModel
-		reminderViewModel.updateTaskCount(added: false)
+		reminderViewModel?.updateTaskCount(added: false)
 	}
 
 	// MARK: - Data fetching
 
 	override func fetchData(_ block: @escaping ([Task]) -> Void) {
-		guard let model = reminderViewModel.model else { return block([]) }
+		guard let model = reminderViewModel?.model else { return block([]) }
 		Database.getTasks(forReminderId: model.id) { tasks in
 			block(tasks)
-			self.array.forEach { $0.taskArrayViewModel = self }
 		}
 	}
 }
