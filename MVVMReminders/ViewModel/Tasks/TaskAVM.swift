@@ -25,6 +25,7 @@ class TaskArrayViewModel: SimpleArrayViewModel<Task, TaskViewModel> {
 
 		// create
 		let task = Task(with: name, reminderId: model.id)
+		task.order = reminderViewModel.reminderArrayViewModel?.numberOfItems ?? 0
 		let taskViewModel = TaskViewModel(task)
 		taskViewModel.delegate = self
 

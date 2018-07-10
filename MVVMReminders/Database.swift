@@ -20,7 +20,7 @@ class Database {
 
 	static func getTasks(forReminderId reminderId: String,
 						 _ completion: @escaping ([Task])->Void) {
-		let ref = Firestore.ref(remindersRef)
+		let ref = refForReminders
 			.document(reminderId).collection(tasksRef)
 			.order(by: "order", descending: false)
 		Firestore.getList(from: ref) { tasks in
@@ -88,7 +88,7 @@ class Database {
 	}
 
 	fileprivate static func ref(for task:Task) -> DocumentReference {
-		return Firestore.ref(remindersRef).document(task.reminderId)
+		return refForReminders.document(task.reminderId)
 			.collection(tasksRef).document(task.id)
 	}
 
@@ -102,12 +102,11 @@ class Database {
 
 	static func getReminders(with query: ReminderQuery,
 							 _ completion: @escaping ([Reminder])->Void) {
-		let ref = Firestore.ref(remindersRef)
-		Firestore.getList(from: ref,
+		Firestore.getList(from: refForReminders,
 						  cursor: query.cursor,
 						  limit: query.size) { (reminders:[Reminder], cursor) in
-			query.cursor = cursor
-			completion(reminders)
+							query.cursor = cursor
+							completion(reminders)
 		}
 	}
 
@@ -123,13 +122,18 @@ class Database {
 		ref(for: reminder).update(with: reminder)
 	}
 
-	fileprivate static func ref(for reminder:Reminder) -> DocumentReference {
-		return Firestore.ref(remindersRef).document(reminder.id)
-	}
-
 	fileprivate static func updateReminders(_ reminders:[Reminder]) {
 		reminders.forEach { reminder in
 			updateReminder(reminder)
 		}
+	}
+
+	fileprivate static func ref(for reminder:Reminder) -> DocumentReference {
+		return refForReminders.document(reminder.id)
+	}
+
+	fileprivate static var refForReminders: CollectionReference {
+		guard let userId = authController.userId else { fatalError("user not found") }
+		return Firestore.ref(usersRef).document(userId).collection(remindersRef)
 	}
 }
