@@ -150,5 +150,86 @@
             </objects>
             <point key="canvasLocation" x="157.59999999999999" y="146.17691154422789"/>
         </scene>
+        <!--Email AuthVC-->
+        <scene sceneID="d08-Uw-B89">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="nUl-gc-vH4" customClass="EmailAuthVC" customModule="FirestoreHelper" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U11-3h-IVT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qFM-db-A7d">
+                                <rect key="frame" x="20" y="120" width="335" height="213.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ef2-l1-UhC">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="38.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Напоминания" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti2-IX-dkf">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iZ4-E3-Dpy">
+                                        <rect key="frame" x="0.0" y="68.5" width="335" height="80"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qfg-1R-otZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WpG-CP-nzo">
+                                                <rect key="frame" x="0.0" y="50" width="335" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="p6z-yb-ZfW">
+                                        <rect key="frame" x="0.0" y="178.5" width="335" height="35"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkg-gh-YFm">
+                                                <rect key="frame" x="0.0" y="0.0" width="185" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <state key="normal" title="Зарегистрироваться"/>
+                                                <connections>
+                                                    <action selector="signUp:" destination="nUl-gc-vH4" eventType="touchUpInside" id="bEp-wF-USC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnu-wf-M7M">
+                                                <rect key="frame" x="280" y="0.0" width="55" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <state key="normal" title="Войти"/>
+                                                <connections>
+                                                    <action selector="signIn:" destination="nUl-gc-vH4" eventType="touchUpInside" id="SoR-Dx-Gw3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qFM-db-A7d" firstAttribute="top" secondItem="HbN-DQ-kpf" secondAttribute="top" constant="100" id="F36-gy-4cb"/>
+                            <constraint firstItem="qFM-db-A7d" firstAttribute="leading" secondItem="HbN-DQ-kpf" secondAttribute="leading" constant="20" id="law-Bo-wRn"/>
+                            <constraint firstItem="qFM-db-A7d" firstAttribute="centerX" secondItem="U11-3h-IVT" secondAttribute="centerX" id="wKn-Cm-gbp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HbN-DQ-kpf"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="Qfg-1R-otZ" id="lfS-b6-95Y"/>
+                        <outlet property="passwordField" destination="WpG-CP-nzo" id="447-hs-HaK"/>
+                        <outlet property="signInButton" destination="dkg-gh-YFm" id="39U-4V-zdM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWS-1u-Atr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="158" y="839"/>
+        </scene>
     </scenes>
 </document>

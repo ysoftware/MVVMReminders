@@ -8,6 +8,10 @@
 
 import UIKit
 import Firebase
+import FirestoreHelper
+import AuthController
+
+let authController = AuthController<User>()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +21,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions
 		launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+		// Firebase
 		FirebaseApp.configure()
+
+		// Auth Controller
+		let authLogin = WindowLoginPresenter() {
+			return UIStoryboard(name: "Main", bundle: .main)
+				.instantiateViewController(withIdentifier: "LoginVC")
+		}
+
+		authController.configure(networkService: FirestoreAuthService<User>(),
+								 loginPresenter: authLogin,
+								 editProfilePresenter: self)
 
 		return true
 	}
+}
+
+extension AppDelegate: AuthEditProfile {
+	func present() { } // no-op
 }

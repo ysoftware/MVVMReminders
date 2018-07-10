@@ -22,10 +22,16 @@ class RemindersViewController: UIViewController {
 		let addButton = UIBarButtonItem(barButtonSystemItem: .add,
 										target: self,
 										action: #selector(add))
-		navigationItem.rightBarButtonItem = addButton
+		let quitButton = UIBarButtonItem(title: "Выйти", style: .plain,																		target: self,
+										action: #selector(quit))
+		navigationItem.rightBarButtonItems = [addButton, quitButton]
 		
 		viewModel.delegate = self
 		viewModel.reloadData()
+	}
+
+	@objc func quit(_ sender:Any) {
+		authController.signOut()
 	}
 
 	@objc func add(_ sender:Any) {
