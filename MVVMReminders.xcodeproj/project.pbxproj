@@ -80,9 +80,9 @@
 		7119BE6C20F0956F00B758E2 /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
-				7119BE7120F095B800B758E2 /* Query.swift */,
 				7119BE6D20F0957C00B758E2 /* ReminderVM.swift */,
 				71493EA520EFD03A00E579C1 /* ReminderAVM.swift */,
+				7119BE7120F095B800B758E2 /* Query.swift */,
 			);
 			path = Reminders;
 			sourceTree = "<group>";

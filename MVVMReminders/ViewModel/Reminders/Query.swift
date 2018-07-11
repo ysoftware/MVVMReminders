@@ -18,8 +18,4 @@ class ReminderQuery:MVVM.Query {
 	func resetPosition() {
 		cursor = nil
 	}
-
-	func advance() {
-		// not used with firebase
-	}
 }

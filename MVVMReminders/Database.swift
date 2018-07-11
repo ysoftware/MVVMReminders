@@ -101,12 +101,11 @@ class Database {
 	// MARK: - Reminders
 
 	static func getReminders(with query: ReminderQuery,
-							 _ completion: @escaping ([Reminder])->Void) {
+							 _ completion: @escaping ([Reminder], DocumentSnapshot?)->Void) {
 		Firestore.getList(from: refForReminders,
 						  cursor: query.cursor,
 						  limit: query.size) { (reminders:[Reminder], cursor) in
-							query.cursor = cursor
-							completion(reminders)
+							completion(reminders, cursor)
 		}
 	}
 
