@@ -28,7 +28,7 @@ class RemindersViewController: UIViewController {
 		navigationItem.rightBarButtonItems = [addButton, quitButton]
 		
 		viewModel.delegate = self
-		viewModel.reloadData()
+//		viewModel.reloadData()
 
 		NotificationCenter.default.addObserver(forName: .authControllerDidSignIn,
 											   object: nil,
@@ -94,6 +94,51 @@ extension RemindersViewController: ArrayViewModelDelegate {
 
 	func didUpdateData() {
 		tableView.reloadData()
+	}
+
+	func didChangeState(to state:ArrayViewModelState) {
+		switch state {
+		case .loading:
+			// показать индикатор загрузки наверху
+			showActivityIndicator(keepData: false)
+			break
+		case .loadingMore:
+			// показать индикатор снизу элементов
+			showActivityIndicator(keepData: true)
+			break
+		case .initial:
+			// желательно сразу вызвать .reloadData(), нечего тут делать
+			// хотя, можно оставить так, например, если пользователь вышел из системы
+			showContent()
+			break
+		case .error(let error):
+			// ошибка загрузки данных
+			showError(error, keepData: false)
+			break
+		case .paginationError(let error):
+			// ошибка подзагрузки данных
+			showError(error, keepData: true)
+			break
+		case .ready(_):
+			// данные готовы
+			showContent()
+			break
+		}
+	}
+}
+
+extension RemindersViewController {
+
+	func showError(_ error:Error, keepData:Bool) {
+		UIApplication.shared.isNetworkActivityIndicatorVisible = false
+	}
+
+	func showActivityIndicator(keepData:Bool) {
+		UIApplication.shared.isNetworkActivityIndicatorVisible = true
+	}
+
+	func showContent() {
+		UIApplication.shared.isNetworkActivityIndicatorVisible = false
 	}
 }
 

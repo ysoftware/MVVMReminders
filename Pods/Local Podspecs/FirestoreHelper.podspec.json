@@ -1,6 +1,6 @@
 {
   "name": "FirestoreHelper",
-  "version": "0.0.1",
+  "version": "0.1",
   "summary": "Firestore methods",
   "description": "Methods for easier Firestore access.",
   "homepage": "http://ysoftware.ru/",
@@ -12,7 +12,8 @@
     "ios": "8.0"
   },
   "source": {
-    "path": "."
+    "git": "https://bitbucket.org/ysoftware/firestorehelper.git",
+    "tag": "0.1"
   },
   "source_files": [
     "FirestoreHelper",

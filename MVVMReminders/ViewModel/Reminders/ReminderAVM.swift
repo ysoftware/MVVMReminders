@@ -49,11 +49,11 @@ class ReminderArrayViewModel: ArrayViewModel<Reminder, ReminderViewModel, Remind
 	// MARK: - Data fetching
 
 	override func fetchData(_ query: ReminderQuery?,
-							_ block: @escaping ([Reminder]) -> Void) {
-		guard let query = query else { return block([]) }
-		Database.getReminders(with: query) { reminders, cursor in
+							_ block: @escaping ([Reminder], Error?) -> Void) {
+		guard let query = query else { return block([], nil) }
+		Database.getReminders(with: query) { reminders, cursor, error in
 			query.cursor = cursor
-			block(reminders)
+			block(reminders, error)
 		}
 	}
 }

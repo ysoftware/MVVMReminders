@@ -40,7 +40,7 @@ PODS:
     - Protobuf (~> 3.1)
   - FirebaseInstanceID (3.1.1):
     - FirebaseCore (~> 5.0)
-  - FirestoreHelper (0.0.1):
+  - FirestoreHelper (0.1):
     - AuthController
     - Firebase/Auth
     - Firebase/Core
@@ -123,7 +123,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 62f1b792a49bb9e8b4073f24606d2c93ffc352f0
   FirebaseFirestore: 53f6fe858494c39dbfd5237655e0641152a88c89
   FirebaseInstanceID: f3f0657372592ecdfdfe2cac604a5a75758376a6
-  FirestoreHelper: 7ecd9929759000792b413c0043895ebb78e3f304
+  FirestoreHelper: 00ad33192c89214816577162c96cfb64c5fd51f6
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   gRPC: 81b990caa01d7c32605d300c2ffd1b5ba0ef9e49
   gRPC-Core: a56b086a8ef5ced6f6ba5be5bc0a63fca185015a
@@ -131,7 +131,7 @@ SPEC CHECKSUMS:
   gRPC-RxLibrary: fa6852f98d6ec0b73c0ec2f6406c26943099d501
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  MVVM: fe00538ee0b1bdae5d3b5f5c742ab88d610a8b08
+  MVVM: beb5f9f1f76d65a9dbb65421bcfe27bc5074beda
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
 

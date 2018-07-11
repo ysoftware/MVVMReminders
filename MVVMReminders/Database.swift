@@ -19,12 +19,12 @@ class Database {
 	// MARK: - Tasks
 
 	static func getTasks(forReminderId reminderId: String,
-						 _ completion: @escaping ([Task])->Void) {
+						 _ completion: @escaping ([Task], Error?)->Void) {
 		let ref = refForReminders
 			.document(reminderId).collection(tasksRef)
 			.order(by: "order", descending: false)
-		Firestore.getList(from: ref) { tasks in
-			completion(tasks)
+		Firestore.getList(from: ref) { tasks, error in
+			completion(tasks, error)
 		}
 	}
 
@@ -41,7 +41,7 @@ class Database {
 		ref(for: task).delete { _ in
 
 			// get remaining tasks
-			getTasks(forReminderId: task.reminderId) { tasks in
+			getTasks(forReminderId: task.reminderId) { tasks, _ in
 
 				// change order
 				let ordered = reorder(tasks)
@@ -54,7 +54,7 @@ class Database {
 
 	static func moveTask(_ task:Task, to newIndex:Int) {
 		// get all tasks
-		getTasks(forReminderId: task.reminderId) { tasks in
+		getTasks(forReminderId: task.reminderId) { tasks, _ in
 
 			guard let currentIndex = tasks.index(of: task) else { return }
 
@@ -101,11 +101,11 @@ class Database {
 	// MARK: - Reminders
 
 	static func getReminders(with query: ReminderQuery,
-							 _ completion: @escaping ([Reminder], DocumentSnapshot?)->Void) {
+							 _ completion: @escaping ([Reminder], DocumentSnapshot?, Error?)->Void) {
 		Firestore.getList(from: refForReminders,
 						  cursor: query.cursor,
-						  limit: query.size) { (reminders:[Reminder], cursor) in
-							completion(reminders, cursor)
+						  limit: query.size) { (reminders:[Reminder], cursor, error) in
+							completion(reminders, cursor, error)
 		}
 	}
 

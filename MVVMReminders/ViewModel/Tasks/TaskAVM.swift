@@ -72,10 +72,10 @@ class TaskArrayViewModel: SimpleArrayViewModel<Task, TaskViewModel> {
 
 	// MARK: - Data fetching
 
-	override func fetchData(_ block: @escaping ([Task]) -> Void) {
-		guard let model = reminderViewModel?.model else { return block([]) }
-		Database.getTasks(forReminderId: model.id) { tasks in
-			block(tasks)
+	override func fetchData(_ block: @escaping ([Task], Error?) -> Void) {
+		guard let model = reminderViewModel?.model else { return block([], nil) }
+		Database.getTasks(forReminderId: model.id) { tasks, error in
+			block(tasks, error)
 		}
 	}
 }
