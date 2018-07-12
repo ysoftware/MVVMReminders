@@ -10,9 +10,11 @@ import AuthController
 import UIKit
 import MVVM
 
-class RemindersViewController: UIViewController {
+final class RemindersViewController: UIViewController {
 
 	@IBOutlet weak var tableView:UITableView!
+	@IBOutlet weak var errorView: ErrorView!
+	var refreshControl = UIRefreshControl()
 
 	let viewModel = ReminderArrayViewModel()
 	var reminderViewModelToOpenInSegue:ReminderViewModel?
@@ -20,13 +22,18 @@ class RemindersViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		updateError(nil)
+
 		let addButton = UIBarButtonItem(barButtonSystemItem: .add,
 										target: self,
 										action: #selector(add))
 		let quitButton = UIBarButtonItem(title: "Выйти", style: .plain,																		target: self,
 										action: #selector(quit))
 		navigationItem.rightBarButtonItems = [addButton, quitButton]
-		
+
+		refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+		tableView.refreshControl = refreshControl
+
 		viewModel.delegate = self
 //		viewModel.reloadData()
 
@@ -44,6 +51,10 @@ class RemindersViewController: UIViewController {
 
 	@objc func quit(_ sender:Any) {
 		authController.signOut()
+	}
+
+	@objc func refresh(_ sender:Any) {
+		viewModel.reloadData()
 	}
 
 	@objc func add(_ sender:Any) {
@@ -129,16 +140,60 @@ extension RemindersViewController: ArrayViewModelDelegate {
 
 extension RemindersViewController {
 
+	// MARK: - UI updates
+
+	func updateRefreshControl(_ value:Bool) {
+		if value {
+			refreshControl.beginRefreshing()
+		}
+		else {
+			UIApplication.shared.isNetworkActivityIndicatorVisible = value
+			refreshControl.endRefreshing()
+		}
+	}
+
+	func updateError(_ error:Error?) {
+		if let error = error {
+
+			let message:String
+			switch ((error as NSError).code) {
+			case 14: message = "Не удалось получить данные с сервера."
+			default: message = error.localizedDescription
+			}
+
+			errorView.setup(withMessage: message,
+							buttonTitle: "Повторить") { [unowned self] in
+								self.viewModel.reloadData()
+			}
+		}
+		errorView.isHidden = error == nil
+	}
+
+	// MARK: - State update methods
+
 	func showError(_ error:Error, keepData:Bool) {
-		UIApplication.shared.isNetworkActivityIndicatorVisible = false
+		updateRefreshControl(false)
+
+		if keepData {
+			self.call(message: error.localizedDescription)
+		}
+		else {
+			updateError(error)
+		}
 	}
 
 	func showActivityIndicator(keepData:Bool) {
-		UIApplication.shared.isNetworkActivityIndicatorVisible = true
+		if keepData {
+			UIApplication.shared.isNetworkActivityIndicatorVisible = true
+		}
+		else {
+			updateRefreshControl(true)
+		}
 	}
 
 	func showContent() {
-		UIApplication.shared.isNetworkActivityIndicatorVisible = false
+		updateRefreshControl(false)
+		updateError(nil)
 	}
 }
 

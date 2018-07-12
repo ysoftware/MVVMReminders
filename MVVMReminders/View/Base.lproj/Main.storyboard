@@ -52,18 +52,27 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="BUZ-bX-jT1"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucd-K3-xe3" customClass="ErrorView" customModule="MVVMReminders" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dbU-JM-Nmt" secondAttribute="trailing" id="3I1-60-yfu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ucd-K3-xe3" secondAttribute="trailing" id="EAE-76-j1d"/>
                             <constraint firstItem="dbU-JM-Nmt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EGz-LV-RfC"/>
                             <constraint firstItem="dbU-JM-Nmt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UEz-4k-UqE"/>
+                            <constraint firstItem="ucd-K3-xe3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Yun-qA-dAQ"/>
                             <constraint firstItem="dbU-JM-Nmt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fBE-wS-s0z"/>
+                            <constraint firstItem="ucd-K3-xe3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="faO-a9-nBT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ucd-K3-xe3" secondAttribute="bottom" id="h3N-Pc-5KW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Напоминания" id="DCv-ms-nDF"/>
                     <connections>
+                        <outlet property="errorView" destination="ucd-K3-xe3" id="LPr-CC-8a5"/>
                         <outlet property="tableView" destination="dbU-JM-Nmt" id="o8p-Dw-L8b"/>
                         <segue destination="4nc-Pj-413" kind="show" identifier="TasksViewController" id="7w2-Rz-W8S"/>
                     </connections>
@@ -159,7 +168,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qFM-db-A7d">
-                                <rect key="frame" x="20" y="120" width="335" height="213.5"/>
+                                <rect key="frame" x="20" y="120" width="335" height="214.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ef2-l1-UhC">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="38.5"/>
@@ -190,19 +199,19 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="p6z-yb-ZfW">
-                                        <rect key="frame" x="0.0" y="178.5" width="335" height="35"/>
+                                        <rect key="frame" x="0.0" y="178.5" width="335" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkg-gh-YFm">
-                                                <rect key="frame" x="0.0" y="0.0" width="185" height="35"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="191" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Зарегистрироваться"/>
                                                 <connections>
                                                     <action selector="signUp:" destination="nUl-gc-vH4" eventType="touchUpInside" id="bEp-wF-USC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnu-wf-M7M">
-                                                <rect key="frame" x="280" y="0.0" width="55" height="35"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <rect key="frame" x="279" y="0.0" width="56" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Войти"/>
                                                 <connections>
                                                     <action selector="signIn:" destination="nUl-gc-vH4" eventType="touchUpInside" id="SoR-Dx-Gw3"/>

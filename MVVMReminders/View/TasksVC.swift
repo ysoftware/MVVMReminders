@@ -9,7 +9,7 @@
 import UIKit
 import MVVM
 
-class TasksViewController: UIViewController {
+final class TasksViewController: UIViewController {
 
 	@IBOutlet weak var tableView:UITableView!
 	

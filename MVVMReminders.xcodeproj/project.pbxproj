@@ -24,6 +24,8 @@
 		71493EB220EFD11500E579C1 /* TasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493EB120EFD11500E579C1 /* TasksVC.swift */; };
 		71493EB420EFF53500E579C1 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71493EB320EFF53500E579C1 /* Reminder.swift */; };
 		714ABF4C20F3489C0023831F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 714ABF4B20F3489B0023831F /* GoogleService-Info.plist */; };
+		7180CFDB20F74BB60018BA8E /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7180CFDA20F74BB60018BA8E /* ErrorView.xib */; };
+		7180CFDD20F74DBC0018BA8E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7180CFDC20F74DBC0018BA8E /* ErrorView.swift */; };
 		71B7DC7320F40C0900BFDF94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DC7220F40C0900BFDF94 /* User.swift */; };
 		999A577D1D1DB7888DAB2B90 /* libPods-MVVMReminders.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 228FDC1AAAD26D85BD9EB951 /* libPods-MVVMReminders.a */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		71493EB120EFD11500E579C1 /* TasksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksVC.swift; sourceTree = "<group>"; };
 		71493EB320EFF53500E579C1 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		714ABF4B20F3489B0023831F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7180CFDA20F74BB60018BA8E /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		7180CFDC20F74DBC0018BA8E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		71B7DC7220F40C0900BFDF94 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F14EA8CF1DC92DED077A504A /* Pods-MVVMReminders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMReminders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMReminders/Pods-MVVMReminders.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,9 +132,11 @@
 			isa = PBXGroup;
 			children = (
 				71493E9220EFBAC500E579C1 /* Main.storyboard */,
+				7180CFDA20F74BB60018BA8E /* ErrorView.xib */,
 				71493E9020EFBAC500E579C1 /* RemindersVC.swift */,
 				71493EB120EFD11500E579C1 /* TasksVC.swift */,
 				71493EA220EFCF2500E579C1 /* Cells.swift */,
+				7180CFDC20F74DBC0018BA8E /* ErrorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 				71493E9620EFBAC900E579C1 /* Assets.xcassets in Resources */,
 				71493E9420EFBAC500E579C1 /* Main.storyboard in Resources */,
 				714ABF4C20F3489C0023831F /* GoogleService-Info.plist in Resources */,
+				7180CFDB20F74BB60018BA8E /* ErrorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +321,7 @@
 				71B7DC7320F40C0900BFDF94 /* User.swift in Sources */,
 				71493EA320EFCF2500E579C1 /* Cells.swift in Sources */,
 				7119BE7020F0959200B758E2 /* TaskVM.swift in Sources */,
+				7180CFDD20F74DBC0018BA8E /* ErrorView.swift in Sources */,
 				71493EB420EFF53500E579C1 /* Reminder.swift in Sources */,
 				7119BE6E20F0957C00B758E2 /* ReminderVM.swift in Sources */,
 				71493EB020EFD0D100E579C1 /* Database.swift in Sources */,
