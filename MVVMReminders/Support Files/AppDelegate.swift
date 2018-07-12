@@ -24,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Firebase
 		FirebaseApp.configure()
 
+		// Firestore
+		let settings = FirestoreSettings()
+		settings.areTimestampsInSnapshotsEnabled = true
+		Firestore.firestore().settings = settings
+
 		// Auth Controller
 		let authLogin = WindowLoginPresenter() {
 			return UIStoryboard(name: "Main", bundle: .main)
