@@ -149,6 +149,10 @@ extension RemindersViewController {
 		else {
 			UIApplication.shared.isNetworkActivityIndicatorVisible = value
 			refreshControl.endRefreshing()
+
+			// apple bug fix
+			navigationController?.navigationBar.isTranslucent = true
+			navigationController?.navigationBar.isTranslucent = false
 		}
 	}
 
