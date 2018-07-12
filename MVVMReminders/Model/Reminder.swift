@@ -10,14 +10,14 @@ import Foundation
 
 class Reminder: Codable {
 
-	var id:String
 	var name:String
-	var tasksCount:Int
+	
+	var tasksCount = 0
+	var id = UUID().uuidString
+	var timestamp = Date().timeIntervalSince1970
 
 	init(with name:String) {
 		self.name = name
-		id = UUID().uuidString
-		tasksCount = 0
 	}
 }
 

@@ -10,14 +10,14 @@ import Foundation
 
 class Task: Codable {
 
-	var order:Int = 0
-	var id:String
 	var name:String
-	var isFinished:Bool = false
 	var reminderId:String
+	
+	var order = 0
+	var id = UUID().uuidString
+	var isFinished = false
 
 	init(with name:String, reminderId:String) {
-		self.id = UUID().uuidString
 		self.reminderId = reminderId
 		self.name = name
 	}
