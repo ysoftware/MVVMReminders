@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7119BE6620F0822A00B758E2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119BE6520F0822A00B758E2 /* Extensions.swift */; };
-		7119BE6A20F0847600B758E2 /* JSONAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119BE6920F0847500B758E2 /* JSONAny.swift */; };
 		7119BE6E20F0957C00B758E2 /* ReminderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119BE6D20F0957C00B758E2 /* ReminderVM.swift */; };
 		7119BE7020F0959200B758E2 /* TaskVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119BE6F20F0959200B758E2 /* TaskVM.swift */; };
 		7119BE7220F095B800B758E2 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119BE7120F095B800B758E2 /* Query.swift */; };
@@ -33,7 +32,6 @@
 		228FDC1AAAD26D85BD9EB951 /* libPods-MVVMReminders.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MVVMReminders.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5219AD68EC4F75FB9E947671 /* Pods-MVVMReminders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMReminders.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMReminders/Pods-MVVMReminders.release.xcconfig"; sourceTree = "<group>"; };
 		7119BE6520F0822A00B758E2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		7119BE6920F0847500B758E2 /* JSONAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAny.swift; sourceTree = "<group>"; };
 		7119BE6D20F0957C00B758E2 /* ReminderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVM.swift; sourceTree = "<group>"; };
 		7119BE6F20F0959200B758E2 /* TaskVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVM.swift; sourceTree = "<group>"; };
 		7119BE7120F095B800B758E2 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
@@ -129,6 +127,7 @@
 		71493EA720EFD07500E579C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71493E9220EFBAC500E579C1 /* Main.storyboard */,
 				71493E9020EFBAC500E579C1 /* RemindersVC.swift */,
 				71493EB120EFD11500E579C1 /* TasksVC.swift */,
 				71493EA220EFCF2500E579C1 /* Cells.swift */,
@@ -167,9 +166,7 @@
 			children = (
 				714ABF4B20F3489B0023831F /* GoogleService-Info.plist */,
 				71493E8E20EFBAC500E579C1 /* AppDelegate.swift */,
-				7119BE6920F0847500B758E2 /* JSONAny.swift */,
 				7119BE6520F0822A00B758E2 /* Extensions.swift */,
-				71493E9220EFBAC500E579C1 /* Main.storyboard */,
 				71493E9520EFBAC900E579C1 /* Assets.xcassets */,
 				71493E9720EFBAC900E579C1 /* LaunchScreen.storyboard */,
 				71493E9A20EFBAC900E579C1 /* Info.plist */,
@@ -311,7 +308,6 @@
 				71493E9120EFBAC500E579C1 /* RemindersVC.swift in Sources */,
 				7119BE7220F095B800B758E2 /* Query.swift in Sources */,
 				71493EA120EFBCE700E579C1 /* TaskAVM.swift in Sources */,
-				7119BE6A20F0847600B758E2 /* JSONAny.swift in Sources */,
 				71493EAA20EFD0A400E579C1 /* Task.swift in Sources */,
 				71493E8F20EFBAC500E579C1 /* AppDelegate.swift in Sources */,
 				7119BE6620F0822A00B758E2 /* Extensions.swift in Sources */,
