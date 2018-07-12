@@ -35,7 +35,7 @@ final class RemindersViewController: UIViewController {
 		tableView.refreshControl = refreshControl
 
 		viewModel.delegate = self
-//		viewModel.reloadData()
+		viewModel.reloadData()
 
 		NotificationCenter.default.addObserver(forName: .authControllerDidSignIn,
 											   object: nil,

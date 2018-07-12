@@ -48,12 +48,28 @@ class ReminderArrayViewModel: ArrayViewModel<Reminder, ReminderViewModel, Remind
 
 	// MARK: - Data fetching
 
+	// firestore doesn't have op cancel, this will do for test
+	var loadCount = 0
+
 	override func fetchData(_ query: ReminderQuery?,
 							_ block: @escaping ([Reminder], Error?) -> Void) {
 		guard let query = query else { return block([], nil) }
+
+		loadCount += 1 // cancel operation hax for test
+
 		Database.getReminders(with: query) { reminders, cursor, error in
+
+			// cancel operation hax for test
+			guard self.loadCount > 0 else { return }
+			self.loadCount -= 1
+
 			query.cursor = cursor
 			block(reminders, error)
 		}
+	}
+
+	override func cancelLoadOperation() -> Bool {
+		loadCount -= 1
+		return true
 	}
 }
