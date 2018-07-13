@@ -14,10 +14,10 @@ final class RemindersViewController: UIViewController {
 
 	@IBOutlet weak var tableView:UITableView!
 	@IBOutlet weak var errorView: ErrorView!
-	var refreshControl = UIRefreshControl()
 
-	let viewModel = ReminderArrayViewModel()
-	var reminderViewModelToOpenInSegue:ReminderViewModel?
+	private var reminderViewModelToOpenInSegue:ReminderViewModel?
+	private var refreshControl = UIRefreshControl()
+	private let viewModel = ReminderArrayViewModel()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -91,20 +91,24 @@ final class RemindersViewController: UIViewController {
 
 extension RemindersViewController: ArrayViewModelDelegate {
 
-	func didAddElements(at indexes: [Int]) {
-		tableView.insertRows(at: indexes.map { IndexPath(row: $0, section: 0) }, with: .automatic)
-	}
-
-	func didUpdateElements(at indexes: [Int]) {
-		tableView.reloadRows(at: indexes.map { IndexPath(row: $0, section: 0) }, with: .automatic)
-	}
-
-	func didDeleteElements(at indexes: [Int]) {
-		tableView.deleteRows(at: indexes.map { IndexPath(row: $0, section: 0) }, with: .automatic)
-	}
-
-	func didUpdateData() {
-		tableView.reloadData()
+	func didUpdateData<M, VM, Q>(_ arrayViewModel: ArrayViewModel<M, VM, Q>, _ update: Update)
+		where M : Equatable, VM : ViewModel<M>, Q : Query {
+			
+			switch update {
+			case .reload:
+				tableView.reloadData()
+			case .append(let indexes):
+				tableView.insertRows(at: indexes.map { IndexPath(row: $0, section: 0) },
+									 with: .automatic)
+			case .update(let indexes):
+				tableView.reloadRows(at: indexes.map { IndexPath(row: $0, section: 0) },
+									 with: .automatic)
+			case .delete(let indexes):
+				tableView.deleteRows(at: indexes.map { IndexPath(row: $0, section: 0) },
+									 with: .automatic)
+			case .move(_, _):
+				break
+			}
 	}
 
 	func didChangeState(to state:ArrayViewModelState) {

@@ -14,7 +14,8 @@ final class TasksViewController: UIViewController {
 	@IBOutlet weak var tableView:UITableView!
 	
 	var viewModel:TaskArrayViewModel!
-	var editButton:UIBarButtonItem!
+	private var editButton:UIBarButtonItem!
+	private var viewModelDelegate:DefaultArrayViewModelDelegate!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -31,7 +32,8 @@ final class TasksViewController: UIViewController {
 		navigationItem.rightBarButtonItems = [addButton, editButton]
 		navigationItem.title = viewModel.reminderViewModel?.name ?? "Задачи"
 
-		viewModel.delegate = self
+		viewModelDelegate = DefaultArrayViewModelDelegate(with: tableView)
+		viewModel.delegate = viewModelDelegate
 		viewModel.reloadData()
 	}
 
@@ -66,32 +68,6 @@ final class TasksViewController: UIViewController {
 		})
 		alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
 		present(alert, animated: true, completion: nil)
-	}
-}
-
-extension TasksViewController: ArrayViewModelDelegate {
-
-	func didAddElements(at indexes: [Int]) {
-		tableView.insertRows(at: indexes.map { IndexPath(row: $0, section: 0) }, with: .automatic)
-	}
-
-	func didUpdateElements(at indexes: [Int]) {
-		tableView.reloadRows(at: indexes.map { IndexPath(row: $0, section: 0) }, with: .automatic)
-	}
-
-	func didDeleteElements(at indexes: [Int]) {
-		tableView.deleteRows(at: indexes.map { IndexPath(row: $0, section: 0) }, with: .automatic)
-	}
-
-	func didMoveElement(at startIndex: Int, to endIndex: Int) {
-		tableView.reloadData()
-		// TO-DO: что происходит? почему раньше работало с этим, но теперь с Firebase - нет?
-//		tableView.moveRow(at: IndexPath(row: startIndex, section: 0),
-//						  to: IndexPath(row: endIndex, section: 0))
-	}
-
-	func didUpdateData() {
-		tableView.reloadData()
 	}
 }
 

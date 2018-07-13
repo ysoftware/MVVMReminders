@@ -1,6 +1,6 @@
 {
   "name": "MVVM",
-  "version": "0.0.1",
+  "version": "0.1",
   "summary": "Base classes for Model-View-ViewModel architechture.",
   "description": "Set of base classes for implementing Model-View-ViewModel architechture.",
   "homepage": "http://ysoftware.ru/",
