@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-final public  class ErrorView: UIView {
+final public class ErrorView: UIView {
 
 	@IBOutlet weak var errorLabel: UILabel!
 	@IBOutlet weak var actionButton: UIButton!

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Task: Codable {
+final class Task: Codable {
 
 	var name:String
 	var reminderId:String

@@ -8,7 +8,7 @@
 
 import MVVM
 
-class TaskArrayViewModel: SimpleArrayViewModel<Task, TaskViewModel> {
+final class TaskArrayViewModel: SimpleArrayViewModel<Task, TaskViewModel> {
 
 	// tasks depend on reminders in this example
 	weak var reminderViewModel:ReminderViewModel?
@@ -27,7 +27,6 @@ class TaskArrayViewModel: SimpleArrayViewModel<Task, TaskViewModel> {
 		let task = Task(with: name, reminderId: model.id)
 		task.order = reminderViewModel?.model?.tasksCount ?? 0
 		let taskViewModel = TaskViewModel(task)
-		taskViewModel.delegate = self
 
 		// save to storage
 		Database.addTask(task)

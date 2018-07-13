@@ -9,7 +9,7 @@
 import MVVM
 import FirebaseFirestore
 
-class ReminderQuery:MVVM.Query {
+final class ReminderQuery:MVVM.Query {
 
 	var cursor:DocumentSnapshot?
 

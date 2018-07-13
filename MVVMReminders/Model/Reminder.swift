@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Reminder: Codable {
+final class Reminder: Codable {
 
 	var name:String
 	

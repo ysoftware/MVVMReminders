@@ -8,7 +8,7 @@
 
 import MVVM
 
-class TaskViewModel: ViewModel<Task> {
+final class TaskViewModel: ViewModel<Task> {
 
 	// MARK: - Methods
 

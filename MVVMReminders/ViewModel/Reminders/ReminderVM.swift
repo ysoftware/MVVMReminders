@@ -8,7 +8,7 @@
 
 import MVVM
 
-class ReminderViewModel: ViewModel<Reminder> {
+final class ReminderViewModel: ViewModel<Reminder> {
 
 	// MARK: - Methods
 
@@ -33,6 +33,6 @@ class ReminderViewModel: ViewModel<Reminder> {
 
 	var tasksCount:String {
 		let count = model?.tasksCount ?? 0
-		return "Количество задач: \(count)"
+		return "Задач: \(count)"
 	}
 }

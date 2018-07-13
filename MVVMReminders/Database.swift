@@ -8,7 +8,9 @@
 import FirebaseFirestore
 import FirestoreHelper
 
-class Database {
+struct Database {
+
+	private init() {}
 
 	fileprivate static let remindersRef = "reminders"
 	fileprivate static let tasksRef = "tasks"

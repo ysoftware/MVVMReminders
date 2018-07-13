@@ -8,7 +8,7 @@
 
 import MVVM
 
-class ReminderArrayViewModel: ArrayViewModel<Reminder, ReminderViewModel, ReminderQuery> {
+final class ReminderArrayViewModel: ArrayViewModel<Reminder, ReminderViewModel, ReminderQuery> {
 
 	override init() {
 		super.init()

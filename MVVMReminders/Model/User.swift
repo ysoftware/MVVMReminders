@@ -8,7 +8,7 @@
 
 import AuthController
 
-class User:AuthControllerUser, Codable {
+final class User:AuthControllerUser, Codable {
 
 	var id: String = ""
 
