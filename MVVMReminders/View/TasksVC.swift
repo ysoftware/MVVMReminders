@@ -15,7 +15,7 @@ final class TasksViewController: UIViewController {
 	
 	var viewModel:TaskArrayViewModel!
 	private var editButton:UIBarButtonItem!
-	private var viewModelDelegate:DefaultArrayViewModelDelegate!
+	private var stateHandler:ArrayViewModelUpdateHandler!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -32,8 +32,8 @@ final class TasksViewController: UIViewController {
 		navigationItem.rightBarButtonItems = [addButton, editButton]
 		navigationItem.title = viewModel.reminderViewModel?.name ?? "Задачи"
 
-		viewModelDelegate = DefaultArrayViewModelDelegate(with: tableView)
-		viewModel.delegate = viewModelDelegate
+		stateHandler = ArrayViewModelUpdateHandler(with: tableView)
+		viewModel.delegate = self
 		viewModel.reloadData()
 	}
 
@@ -68,6 +68,16 @@ final class TasksViewController: UIViewController {
 		})
 		alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
 		present(alert, animated: true, completion: nil)
+	}
+}
+
+extension TasksViewController: ArrayViewModelDelegate {
+
+	func didUpdateData<M, VM, Q>(_ arrayViewModel: ArrayViewModel<M, VM, Q>,
+								 _ update: Update)
+		where M : Equatable, VM : ViewModel<M>, Q : Query {
+
+		stateHandler.handle(update)
 	}
 }
 
