@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A0570CDA3BF1A5E5ABFF3C7AD148178"
+               BlueprintIdentifier = "47B50A274A0D0ACA2E18A7681401219A"
                BlueprintName = "AuthController"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libAuthController.a">

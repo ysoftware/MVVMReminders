@@ -25,8 +25,13 @@ struct Database {
 		let ref = refForReminders
 			.document(reminderId).collection(tasksRef)
 			.order(by: "order", descending: false)
-		Firestore.getList(from: ref) { tasks, error in
-			completion(tasks, error)
+		FirestoreHelper.getList(from: ref) { (result:Result<[Task]>) in
+			switch result {
+			case .data(let data):
+				completion(data, nil)
+			case .error(let error):
+				completion([], error)
+			}
 		}
 	}
 
@@ -105,10 +110,15 @@ struct Database {
 	static func getReminders(with query: ReminderQuery,
 							 _ completion: @escaping ([Reminder], DocumentSnapshot?, Error?)->Void) {
 		let request = refForReminders.order(by: "timestamp", descending: false)
-		Firestore.getList(from: request,
+		FirestoreHelper.getList(from: request,
 						  cursor: query.cursor,
-						  limit: query.size) { (reminders:[Reminder], cursor, error) in
-							completion(reminders, cursor, error)
+						  limit: query.size) { (result:PaginatedResult<[Reminder]>) in
+							switch result {
+							case .data(let data, let cursor):
+								completion(data, cursor, nil)
+							case .error(let error):
+								completion([], nil, error)
+							}
 		}
 	}
 
@@ -135,7 +145,7 @@ struct Database {
 	}
 
 	fileprivate static var refForReminders: CollectionReference {
-		guard let userId = authController.userId else { return Firestore.ref("a") }
-		return Firestore.ref(usersRef).document(userId).collection(remindersRef)
+		guard let userId = authController.userId else { return FirestoreHelper.ref("a") }
+		return FirestoreHelper.ref(usersRef).document(userId).collection(remindersRef)
 	}
 }

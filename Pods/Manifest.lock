@@ -80,12 +80,12 @@ PODS:
   - Protobuf (3.6.0)
 
 DEPENDENCIES:
-  - AuthController (from `/Users/ysoftware/Documents/Work/Shared/AuthController`)
+  - AuthController (from `/Users/ysoftware/Documents/Work/Shared/AuthController-iOS`)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
-  - FirestoreHelper (from `/Users/ysoftware/Documents/Work/Shared/FirestoreHelper`)
-  - MVVM (from `/Users/ysoftware/Documents/Work/Shared/MVVM`)
+  - FirestoreHelper (from `/Users/ysoftware/Documents/Work/Shared/FirestoreHelper-iOS`)
+  - MVVM (from `/Users/ysoftware/Documents/Work/Shared/MVVM-iOS`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -108,11 +108,11 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   AuthController:
-    :path: "/Users/ysoftware/Documents/Work/Shared/AuthController"
+    :path: "/Users/ysoftware/Documents/Work/Shared/AuthController-iOS"
   FirestoreHelper:
-    :path: "/Users/ysoftware/Documents/Work/Shared/FirestoreHelper"
+    :path: "/Users/ysoftware/Documents/Work/Shared/FirestoreHelper-iOS"
   MVVM:
-    :path: "/Users/ysoftware/Documents/Work/Shared/MVVM"
+    :path: "/Users/ysoftware/Documents/Work/Shared/MVVM-iOS"
 
 SPEC CHECKSUMS:
   AuthController: a3ad28e16ebdc0f81807dcd6d12d0a22f9582219
@@ -135,6 +135,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
 
-PODFILE CHECKSUM: 5b5bf2ea2255f27c55de9fdb084f380216cbcf59
+PODFILE CHECKSUM: a1ba9864e436894bba2f988c12d5c1a2aedc8ccc
 
 COCOAPODS: 1.5.2

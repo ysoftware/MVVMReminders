@@ -7,8 +7,8 @@ target 'MVVMReminders' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Core'
 
-	pod 'AuthController', :path=>'/Users/ysoftware/Documents/Work/Shared/AuthController'
-	pod 'FirestoreHelper', :path=>'/Users/ysoftware/Documents/Work/Shared/FirestoreHelper'
-	pod 'MVVM', :path=>'/Users/ysoftware/Documents/Work/Shared/MVVM'
+	pod 'AuthController', :path=>'/Users/ysoftware/Documents/Work/Shared/AuthController-iOS'
+	pod 'FirestoreHelper', :path=>'/Users/ysoftware/Documents/Work/Shared/FirestoreHelper-iOS'
+	pod 'MVVM', :path=>'/Users/ysoftware/Documents/Work/Shared/MVVM-iOS'
 
 end
