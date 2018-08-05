@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		Firestore.firestore().settings = settings
 
 		// Auth Controller
-		let authLogin = WindowLoginPresenter() {
+		let authLogin = WindowLoginPresenter {
 			return UIStoryboard(name: "Main", bundle: .main)
 				.instantiateViewController(withIdentifier: "LoginVC")
 		}
