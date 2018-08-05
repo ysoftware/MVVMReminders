@@ -7,8 +7,13 @@ target 'MVVMReminders' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Core'
 
-	pod 'AuthController', :path=>'/Users/ysoftware/Documents/Work/Shared/AuthController-iOS'
-	pod 'FirestoreHelper', :path=>'/Users/ysoftware/Documents/Work/Shared/FirestoreHelper-iOS'
-	pod 'MVVM', :path=>'/Users/ysoftware/Documents/Work/Shared/MVVM-iOS'
+	pod 'AuthController', 
+	:git=>'https://profitprojectsbot:12345678@bitbucket.org/ysoftware/authcontroller.git'
+
+	pod 'FirestoreHelper', 
+	:git=>'https://profitprojectsbot:12345678@bitbucket.org/ysoftware/firestorehelper.git'
+
+	pod 'MVVM',
+	:git=>'https://profitprojectsbot:12345678@bitbucket.org/ysoftware/mvvm.git'
 
 end
