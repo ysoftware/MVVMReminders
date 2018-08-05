@@ -7,6 +7,7 @@
 //
 
 import MVVM
+import Result
 
 final class ReminderArrayViewModel: ArrayViewModel<Reminder, ReminderViewModel, ReminderQuery> {
 
@@ -52,7 +53,7 @@ final class ReminderArrayViewModel: ArrayViewModel<Reminder, ReminderViewModel, 
 	var loadCount = 0
 
 	override func fetchData(_ query: ReminderQuery?,
-							_ block: @escaping (Result<[Reminder]>) -> Void) {
+							_ block: @escaping (Result<[Reminder], AnyError>) -> Void) {
 		loadCount += 1 // cancel operation hax for test
 
 		Database.getReminders(with: query!) { reminders, cursor, error in
@@ -62,7 +63,7 @@ final class ReminderArrayViewModel: ArrayViewModel<Reminder, ReminderViewModel, 
 			self.loadCount -= 1
 
 			query!.cursor = cursor
-			block(.data(reminders))
+			block(.success(reminders))
 		}
 	}
 

@@ -17,5 +17,10 @@
   "source_files": [
     "MVVM",
     "MVVM/**/*.{h,m,swift}"
-  ]
+  ],
+  "dependencies": {
+    "Result": [
+
+    ]
+  }
 }

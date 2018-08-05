@@ -1,1 +1,1 @@
-../../../../../MVVM-iOS/MVVM/MVVM.h
+../../../MVVM/MVVM/MVVM.h

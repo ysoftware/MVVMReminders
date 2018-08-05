@@ -71,21 +71,23 @@ PODS:
     - gRPC-RxLibrary (= 1.13.0)
   - GTMSessionFetcher/Core (1.1.15)
   - leveldb-library (1.20)
-  - MVVM (0.1)
+  - MVVM (0.1):
+    - Result
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.6.0)
+  - Result (4.0.0)
 
 DEPENDENCIES:
-  - AuthController (from `/Users/ysoftware/Documents/Work/Shared/AuthController-iOS`)
+  - "AuthController (from `https://profitprojectsbot:12345678@bitbucket.org/ysoftware/authcontroller.git`)"
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
-  - FirestoreHelper (from `/Users/ysoftware/Documents/Work/Shared/FirestoreHelper-iOS`)
-  - MVVM (from `/Users/ysoftware/Documents/Work/Shared/MVVM-iOS`)
+  - "FirestoreHelper (from `https://profitprojectsbot:12345678@bitbucket.org/ysoftware/firestorehelper.git`)"
+  - "MVVM (from `https://profitprojectsbot:12345678@bitbucket.org/ysoftware/mvvm.git`)"
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -105,17 +107,29 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - Result
 
 EXTERNAL SOURCES:
   AuthController:
-    :path: "/Users/ysoftware/Documents/Work/Shared/AuthController-iOS"
+    :git: "https://profitprojectsbot:12345678@bitbucket.org/ysoftware/authcontroller.git"
   FirestoreHelper:
-    :path: "/Users/ysoftware/Documents/Work/Shared/FirestoreHelper-iOS"
+    :git: "https://profitprojectsbot:12345678@bitbucket.org/ysoftware/firestorehelper.git"
   MVVM:
-    :path: "/Users/ysoftware/Documents/Work/Shared/MVVM-iOS"
+    :git: "https://profitprojectsbot:12345678@bitbucket.org/ysoftware/mvvm.git"
+
+CHECKOUT OPTIONS:
+  AuthController:
+    :commit: 74792144e9898ab306060b4c7efc26d3f9d08cd6
+    :git: "https://profitprojectsbot:12345678@bitbucket.org/ysoftware/authcontroller.git"
+  FirestoreHelper:
+    :commit: 867f1aaa9d5dc321edc438ca00d7a38e91b75e5e
+    :git: "https://profitprojectsbot:12345678@bitbucket.org/ysoftware/firestorehelper.git"
+  MVVM:
+    :commit: 65ddc0d1968fcd2d71eb5f3501453aee29330e36
+    :git: "https://profitprojectsbot:12345678@bitbucket.org/ysoftware/mvvm.git"
 
 SPEC CHECKSUMS:
-  AuthController: a3ad28e16ebdc0f81807dcd6d12d0a22f9582219
+  AuthController: 24dc6d10c756a68557354c5e2119283b3f387c6c
   BoringSSL: cf3f1793eb6e3c445c4d150456341f149c268a35
   Firebase: 68afeeb05461db02d7c9e3215cda28068670f4aa
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
@@ -123,7 +137,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 62f1b792a49bb9e8b4073f24606d2c93ffc352f0
   FirebaseFirestore: 53f6fe858494c39dbfd5237655e0641152a88c89
   FirebaseInstanceID: f3f0657372592ecdfdfe2cac604a5a75758376a6
-  FirestoreHelper: e656055483465ca81d81c9410dbe62757626aee9
+  FirestoreHelper: 583309a165b3e6d194ba7255829ba0478f5495e7
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   gRPC: 81b990caa01d7c32605d300c2ffd1b5ba0ef9e49
   gRPC-Core: a56b086a8ef5ced6f6ba5be5bc0a63fca185015a
@@ -131,10 +145,11 @@ SPEC CHECKSUMS:
   gRPC-RxLibrary: fa6852f98d6ec0b73c0ec2f6406c26943099d501
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  MVVM: beb5f9f1f76d65a9dbb65421bcfe27bc5074beda
+  MVVM: 586bab0227d6fa43271f656535373e539a886575
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
+  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
 
-PODFILE CHECKSUM: a1ba9864e436894bba2f988c12d5c1a2aedc8ccc
+PODFILE CHECKSUM: eb9ef182c9c0acd047ff4fa5d3a8f8318464be28
 
 COCOAPODS: 1.5.2
