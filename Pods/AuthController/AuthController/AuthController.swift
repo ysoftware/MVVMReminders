@@ -20,16 +20,24 @@ final public class AuthController<U:AuthControllerUser> {
 	/// Объект конфигурации.
 	private var configuration = Configuration()
 
-	/// Сервисы, предоставляющие AuthController необходимый функционал.
+	// MARK: - Сервисы, предоставляющие AuthController необходимый функционал.
+
 	private var locationService:AuthLocation?
+
 	private var analyticsService:AuthAnalytics<U>?
+
 	private var loginPresenter:AuthLogin!
-	private var editProfilePresenter:AuthEditProfile!
+
+	private var editProfilePresenter:AuthEditProfile?
+
 	private var networkService:AuthNetworking<U>!
+
 	private var settingsService:AuthSettings!
 
-    /// Таймер для периодического обновления данных о пользователе.
+	// MARK: - Таймер для периодического обновления данных о пользователе.
+
     private var onlineStatusTimer:Timer?
+
 	private var locationTimer:Timer?
 
     /// Указатель подписки на события изменения данных пользователя в базе данных.
@@ -59,10 +67,10 @@ final public class AuthController<U:AuthControllerUser> {
 	public func configure(configuration:Configuration = .default,
 						  networkService:AuthNetworking<U>,
 						  loginPresenter:AuthLogin,
-						  editProfilePresenter: AuthEditProfile,
+						  editProfilePresenter: AuthEditProfile? = nil,
 						  locationService:AuthLocation? = nil,
 						  analyticsService:AuthAnalytics<U>? = nil,
-						  settingsService:AuthSettings = DefaultSettingsService()) {
+						  settingsService:AuthSettings = UserDefaultsSettingsService()) {
 
 		self.configuration = configuration
 		self.loginPresenter = loginPresenter
@@ -79,9 +87,6 @@ final public class AuthController<U:AuthControllerUser> {
     /// Совершить выход пользователя из системы.
     public func signOut() {
         stopObserving()
-		if user != nil {
-			networkService.removeToken()
-		}
         networkService.signOut()
 		if configuration.requiresAuthentication {
         	showLogin()
@@ -187,7 +192,7 @@ final public class AuthController<U:AuthControllerUser> {
 		}
 
 		if !newValue.isProfileComplete {
-			editProfilePresenter.present()
+			editProfilePresenter?.present()
 		}
 	}
 
@@ -204,9 +209,9 @@ final public class AuthController<U:AuthControllerUser> {
     /// Прекратить отслеживать изменения информации юзера в базе данных.
     private func stopObserving() {
         handle?.remove()
+		networkService.removeToken()
 		handle = nil
         user = nil
-        
         onlineStatusTimer?.invalidate()
         locationTimer?.invalidate()
         setupTrackingFor(nil)
@@ -238,7 +243,8 @@ final public class AuthController<U:AuthControllerUser> {
 		}
     }
 
-	func postNotification(_ notification: Notification.Name) {
+	/// Отправить уведомление о действии.
+	private func postNotification(_ notification: Notification.Name) {
 		NotificationCenter.default.post(name: notification, object: self)
 	}
 }

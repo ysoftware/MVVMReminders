@@ -82,7 +82,7 @@ PODS:
   - Result (4.0.0)
 
 DEPENDENCIES:
-  - "AuthController (from `https://profitprojectsbot:12345678@bitbucket.org/ysoftware/authcontroller.git`)"
+  - "AuthController (from `https://profitprojectsbot:12345678@bitbucket.org/ysoftware/authcontroller.git`, branch `0.1`)"
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
@@ -111,6 +111,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   AuthController:
+    :branch: '0.1'
     :git: "https://profitprojectsbot:12345678@bitbucket.org/ysoftware/authcontroller.git"
   FirestoreHelper:
     :git: "https://profitprojectsbot:12345678@bitbucket.org/ysoftware/firestorehelper.git"
@@ -119,7 +120,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AuthController:
-    :commit: 74792144e9898ab306060b4c7efc26d3f9d08cd6
+    :commit: 62fe6c0586b9bbf03b1c4aa283dea63c967823b1
     :git: "https://profitprojectsbot:12345678@bitbucket.org/ysoftware/authcontroller.git"
   FirestoreHelper:
     :commit: 867f1aaa9d5dc321edc438ca00d7a38e91b75e5e
@@ -150,6 +151,6 @@ SPEC CHECKSUMS:
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
 
-PODFILE CHECKSUM: eb9ef182c9c0acd047ff4fa5d3a8f8318464be28
+PODFILE CHECKSUM: 8ddec237d92e113d24a59131bb961c84c22f02c4
 
 COCOAPODS: 1.5.2

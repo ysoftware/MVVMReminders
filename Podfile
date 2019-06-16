@@ -7,7 +7,7 @@ target 'MVVMReminders' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Core'
 
-	pod 'AuthController', 
+	pod 'AuthController', :branch=>'0.1',
 	:git=>'https://profitprojectsbot:12345678@bitbucket.org/ysoftware/authcontroller.git'
 
 	pod 'FirestoreHelper', 

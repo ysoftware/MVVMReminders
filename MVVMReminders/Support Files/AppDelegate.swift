@@ -36,13 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		}
 
 		authController.configure(networkService: FirestoreAuthService<User>(),
-								 loginPresenter: authLogin,
-								 editProfilePresenter: self)
+								 loginPresenter: authLogin)
 
 		return true
 	}
-}
-
-extension AppDelegate: AuthEditProfile {
-	func present() { } // no-op
 }
